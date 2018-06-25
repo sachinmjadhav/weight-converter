@@ -1,3 +1,16 @@
+document.onreadystatechange = function() {
+  var state = document.readyState;
+  console.log(state);
+  if (state == "interactive") {
+    document.getElementById("contents").style.visibility = "hidden";
+  } else if (state == "complete") {
+    setTimeout(function() {
+      document.getElementById("load").style.visibility = "hidden";
+      document.getElementById("contents").style.visibility = "visible";
+    }, 1500);
+  }
+};
+
 const gramsInput = document.querySelector("#gramsOutput");
 const kgInput = document.querySelector("#kgOutput");
 const poundsInput = document.querySelector("#lbsOutput");
